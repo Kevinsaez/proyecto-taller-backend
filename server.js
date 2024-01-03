@@ -10,6 +10,7 @@ server.use(cors());
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }))
 server.use("", require('./clientes/clientesRoutes'));
+server.use("", require('./vehiculos/vehiculosRutes.js'));
 
 server.use(morgan('dev'));
 
