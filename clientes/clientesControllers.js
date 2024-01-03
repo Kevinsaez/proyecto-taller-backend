@@ -59,10 +59,10 @@ const modificarCliente = (req, res) => {
 
     dbConection.query("UPDATE clientes SET nomApe=?, nroDni=?, localidad=?, domicilio=?, email=?, telefono=? WHERE idCliente=?", [nomApe, nroDni, localidad, domicilio, email, telefono, idCliente], (err, data) => {
         if (data) {
-            res.status(500).json({ "Mensaje": "Cliente modificado con exito" });
+            res.status(200).json({ "Mensaje": "Cliente modificado con exito" });
 
         } else {
-            res.status(200).json({ 'mensaje': err });
+            res.status(500).json({ 'mensaje': err });
 
         }
     })
