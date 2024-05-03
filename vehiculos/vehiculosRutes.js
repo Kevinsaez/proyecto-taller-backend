@@ -1,8 +1,10 @@
-const express = require('express');
-
+const express = require("express");
 const rute = express.Router();
-const { mostrarVehiculos} = require('./vehiculosControllers')
 
-rute.get("/vehiculos", mostrarVehiculos);
+const { mostrarVehiculos, cargarVehiculo,mostrarVehiculoCliente } = require("./vehiculosControllers");
+const update = require("../multer/configMulter");
 
+rute.get("/vehiculos/", mostrarVehiculos);
+rute.post("/cargarVehiculo", update.single("imagen"), cargarVehiculo);
+rute.get("/vehiculosCliente/:idCliente", mostrarVehiculoCliente);
 module.exports = rute;
