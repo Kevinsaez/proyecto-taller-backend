@@ -13,6 +13,7 @@ server.use(express.urlencoded({ extended: true }));
 server.use("/imagenes", express.static("./imagenes"));
 server.use("", require("./clientes/clientesRoutes"));
 server.use("", require("./vehiculos/vehiculosRutes.js"));
+server.use("", require("./usuarios/authRutes.js"));
 
 server.use(morgan("dev"));
 

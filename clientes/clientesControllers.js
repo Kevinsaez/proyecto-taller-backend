@@ -103,6 +103,7 @@ const login = (req, res) => {
 
 
 const verData = (req, res) => {};
+
 module.exports = {
   mostrarClientes,
   cargarCliente,
